@@ -32,7 +32,7 @@ public class SwitchStatementDemo {
             break;
         case 2:
             System.out.println("2 from switch");
-            break;
+            
         default:
             System.out.println("Something went wrong from switch :(");
             break;

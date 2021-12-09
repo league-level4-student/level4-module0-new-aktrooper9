@@ -37,9 +37,22 @@ public class Snake {
          * direction, the head's x or y will increase or decrease by 1.
          */
 
-        int nextX;
-        int nextY;
-
+        int nextX=head.getLocation().getX();
+        int nextY=head.getLocation().getY();
+switch(currentDirection) {
+case UP:
+	nextY-=1;
+	break;
+case DOWN:
+	nextY+=1;
+	break;
+case RIGHT:
+	nextY-=1;
+	break;
+case LEFT:
+	nextY+=1;
+	break;
+}
         
         /*
          * Change the Location of each SnakeSegment in your snake ArrayList to
@@ -48,7 +61,9 @@ public class Snake {
          * Use a loop starting at the end of the ArrayList and stop before the
          * head of the snake (index 0) or you will go out of bounds.
          */
-        
+        for(int i =snake.size()-1; i>0;i-=1) {
+        	snake.get(i).setLocation(snake.get(i-1).getLocation());;
+        }
         
 
         /*
@@ -56,12 +71,15 @@ public class Snake {
          * calculated in step 1. Then set the head's location equal to the new
          * location.
          */
-        
+        Location newHead = null;
+        newHead.setX(nextX);
+        newHead.setY(nextY);
+        head.setLocation(newHead);
         
 
         // Set the canMove member variable to true.
 
-
+canMove =true;
 
     }
 

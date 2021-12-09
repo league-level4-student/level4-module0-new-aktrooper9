@@ -102,11 +102,25 @@ public class SnakeGame implements ActionListener, KeyListener {
          * KeyEvent.VK_UP.
          * 
          * If an arrow key is pressed, set the snake's direction accordingly.
-         */
-        
-        
-
+         */      
+       int key=  e.getKeyCode();
+       switch (key) {
+       case KeyEvent.VK_UP:
+    	   snake.setDirection(Direction.UP);
+    	   break;
+       case KeyEvent.VK_DOWN:
+    	   snake.setDirection(Direction.DOWN);
+    	   break;
+       
+    case KeyEvent.VK_RIGHT:
+ 	   snake.setDirection(Direction.RIGHT);
+ 	   break;
+    case KeyEvent.VK_LEFT:
+  	   snake.setDirection(Direction.LEFT);
+  	   break;
     }
+    }
+
 
     private void setFoodLocation() {
 
@@ -114,8 +128,8 @@ public class SnakeGame implements ActionListener, KeyListener {
          * Create a new Location object that is set to a random location between
          * 0 and the WIDTH and HEIGHT variables.
          */
-
-        
+    	Location food;
+       // food.setX(x);
 
         /*
          * Set the foodLocation member variable equal to the Location object you

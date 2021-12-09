@@ -46,7 +46,7 @@ public class EnumDemo {
         public int getDaysToOrbitSun() {
             return this.daysToOrbitSun;
         }
-
+        
     }
 
     public static void main(String[] args) {
